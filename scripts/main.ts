@@ -1,7 +1,5 @@
-
 import { series } from './data.js';
 import { Serie } from './Serie.js';
-
 const seriesTbody: HTMLElement = document.getElementById('series')!; 
 
 function renderSeriesInTable(series: Serie[], seriesTbody: HTMLElement): void {
@@ -12,7 +10,6 @@ function renderSeriesInTable(series: Serie[], seriesTbody: HTMLElement): void {
                            <td><a href="${s.link}" target="_blank">${s.name}</a></td>
                            <td>${s.channel}</td>
                            <td>${s.seasons}</td>`;
-    trElement.addEventListener('click', () => showSeriesDetails(s));
     seriesTbody.appendChild(trElement);
     totalSeasons += s.seasons;
   });
@@ -21,13 +18,4 @@ function renderSeriesInTable(series: Serie[], seriesTbody: HTMLElement): void {
   summaryElement.innerHTML = `<td colspan="4">Seasons average: ${averageSeasons.toFixed()}</td>`;
   seriesTbody.appendChild(summaryElement);
 }
-
-function showSeriesDetails(series: Serie): void {
-  document.getElementById('seriesDetails')!.style.display = 'block';
-  document.getElementById('seriesImage')!.setAttribute('src', series.image);
-  document.getElementById('seriesName')!.textContent = series.name;
-  document.getElementById('seriesDescription')!.textContent = series.description;
-  document.getElementById('seriesLink')!.setAttribute('href', series.link);
-}
-
 renderSeriesInTable(series, seriesTbody);
