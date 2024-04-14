@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+    <title>TV series</title>
+
+    <style>
+        .header {
+            background-color: #000080;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+        .table thead th {
+            background-color: #add8e6;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <h1>TV Series</h1>
+    </div>
+
+    <div class="container text-center">
+        <div class="row">
+          <div class="col">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Name</th>
+                  <th scope="col">Channel</th>
+                  <th scope="col">Season</th>
+                </tr>
+              </thead>
+              <tbody id="series">
+              </tbody>
+            </table>
+          </div>
+          <div class="col">
+            <div id="seriesDetails" class="card" style="width: 18rem; display: none;">
+              <img id="seriesImage" class="card-img-top" src="" alt="Series image">
+              <div class="card-body">
+                <h5 id="seriesName" class="card-title"></h5>
+                <p id="seriesDescription" class="card-text"></p>
+                <a id="seriesLink" href="#" class="btn btn-primary" target="_blank">Go to series</a>
+          </div>
+        </div>
+    </div>
+
+    <script type="module" src="./scripts/Serie.js"></script>
+    <script type="module" src="./scripts/data.js" ></script>
+    <script type="module" src="./scripts/main.js"></script>
+
+</body>
+</html>
